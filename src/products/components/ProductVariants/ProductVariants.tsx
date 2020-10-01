@@ -358,8 +358,8 @@ export const ProductVariants: React.FC<ProductVariantsProps> = props => {
                     {isDefault && (
                       <span className={classes.defaultVariant}>
                         {intl.formatMessage({
-                          defaultMessage: "default",
-                          description: "default variant label"
+                          defaultMessage: "Default",
+                          description: "default product variant indicator"
                         })}
                       </span>
                     )}
