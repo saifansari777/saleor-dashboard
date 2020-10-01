@@ -54,13 +54,14 @@ export interface ProductVariantPageSubmitData
 }
 
 interface ProductVariantPageProps {
+  defaultVariantId?: string;
   defaultWeightUnit: string;
-  variant?: ProductVariant;
   errors: VariantUpdate_productVariantUpdate_errors[];
-  saveButtonBarState: ConfirmButtonTransitionState;
+  header: string;
   loading?: boolean;
   placeholderImage?: string;
-  header: string;
+  saveButtonBarState: ConfirmButtonTransitionState;
+  variant?: ProductVariant;
   warehouses: WarehouseFragment[];
   onVariantReorder: ReorderAction;
   onAdd();
@@ -73,10 +74,11 @@ interface ProductVariantPageProps {
 }
 
 const ProductVariantPage: React.FC<ProductVariantPageProps> = ({
+  defaultVariantId,
   defaultWeightUnit,
   errors,
-  loading,
   header,
+  loading,
   placeholderImage,
   saveButtonBarState,
   variant,
@@ -85,10 +87,10 @@ const ProductVariantPage: React.FC<ProductVariantPageProps> = ({
   onBack,
   onDelete,
   onImageSelect,
+  onSetDefaultVariant,
   onSubmit,
   onVariantClick,
-  onVariantReorder,
-  onSetDefaultVariant
+  onVariantReorder
 }) => {
   const attributeInput = React.useMemo(
     () => getAttributeInputFromVariant(variant),
@@ -186,6 +188,7 @@ const ProductVariantPage: React.FC<ProductVariantPageProps> = ({
                   <div>
                     <ProductVariantNavigation
                       current={variant ? variant.id : undefined}
+                      defaultVariantId={defaultVariantId}
                       fallbackThumbnail={maybe(
                         () => variant.product.thumbnail.url
                       )}

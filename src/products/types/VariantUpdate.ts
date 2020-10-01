@@ -100,6 +100,11 @@ export interface VariantUpdate_productVariantUpdate_productVariant_product_varia
   images: (VariantUpdate_productVariantUpdate_productVariant_product_variants_images | null)[] | null;
 }
 
+export interface VariantUpdate_productVariantUpdate_productVariant_product_defaultVariant {
+  __typename: "ProductVariant";
+  id: string;
+}
+
 export interface VariantUpdate_productVariantUpdate_productVariant_product {
   __typename: "Product";
   id: string;
@@ -107,6 +112,7 @@ export interface VariantUpdate_productVariantUpdate_productVariant_product {
   name: string;
   thumbnail: VariantUpdate_productVariantUpdate_productVariant_product_thumbnail | null;
   variants: (VariantUpdate_productVariantUpdate_productVariant_product_variants | null)[] | null;
+  defaultVariant: VariantUpdate_productVariantUpdate_productVariant_product_defaultVariant | null;
 }
 
 export interface VariantUpdate_productVariantUpdate_productVariant_stocks_warehouse {
@@ -245,6 +251,11 @@ export interface VariantUpdate_productVariantStocksUpdate_productVariant_product
   images: (VariantUpdate_productVariantStocksUpdate_productVariant_product_variants_images | null)[] | null;
 }
 
+export interface VariantUpdate_productVariantStocksUpdate_productVariant_product_defaultVariant {
+  __typename: "ProductVariant";
+  id: string;
+}
+
 export interface VariantUpdate_productVariantStocksUpdate_productVariant_product {
   __typename: "Product";
   id: string;
@@ -252,6 +263,7 @@ export interface VariantUpdate_productVariantStocksUpdate_productVariant_product
   name: string;
   thumbnail: VariantUpdate_productVariantStocksUpdate_productVariant_product_thumbnail | null;
   variants: (VariantUpdate_productVariantStocksUpdate_productVariant_product_variants | null)[] | null;
+  defaultVariant: VariantUpdate_productVariantStocksUpdate_productVariant_product_defaultVariant | null;
 }
 
 export interface VariantUpdate_productVariantStocksUpdate_productVariant_stocks_warehouse {

@@ -250,6 +250,9 @@ export const fragmentVariant = gql`
           url
         }
       }
+      defaultVariant {
+        id
+      }
     }
     sku
     stocks {
